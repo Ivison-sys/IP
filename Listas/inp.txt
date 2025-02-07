@@ -1,0 +1,14 @@
+2 2
+Pikachu, elétrico, 20, 5
+Charmander, fogo, 30, 4
+Bulbasaur, grama, 15, 3
+Squirtle, água, 10, 6
+ímpar
+1 2
+Pikachu eu escolho você!
+Squirtle chegou a sua vez!
+par
+4 4
+Charmander eu escolho você!
+Bulbasaur chegou a sua vez!
+FIM DAS BATALHAS
