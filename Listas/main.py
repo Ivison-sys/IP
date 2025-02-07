@@ -70,14 +70,14 @@ else:
 
       if pokemonsAsh[indiceAsh][2] < pokemonsGary[indiceGary][2]:    
         print(f"{pokemonsAsh[indiceAsh][0]} desmaiou e {pokemonsGary[indiceGary][0]} venceu esta luta") 
-        p1, p2 = pokemonsAsh[indiceAsh][0], pokemonsGary[indiceGary][0].upper()
+        p1, p2 = pokemonsAsh[indiceAsh][0].lower(), pokemonsGary[indiceGary][0].upper()
         batalhas.append([p1, p2])
         vitoriasGary+=1
         del pokemonsAsh[indiceAsh]
         del nomesAsh[indiceAsh]
       else:
         print(f"{pokemonsGary[indiceGary][0]} desmaiou e {pokemonsAsh[indiceAsh][0]} venceu esta luta")
-        p1, p2 = pokemonsAsh[indiceAsh][0].upper(), pokemonsGary[indiceGary][0]
+        p1, p2 = pokemonsAsh[indiceAsh][0].upper(), pokemonsGary[indiceGary][0].lower()
         batalhas.append([p1, p2])
         vitoriasAsh+=1
         del pokemonsGary[indiceGary]
