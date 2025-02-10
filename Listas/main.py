@@ -1,4 +1,3 @@
-
 nomeFeiticeiro = input()
 vidaFeiticeiro = int(input())
 ataqueFeiticeiro = int(input())
@@ -19,7 +18,7 @@ else:
 
 adaptacoes_nome = []
 adaptacoes_vezes = []
-
+ataques_ecerrados = []
 
 while vidaFeiticeiro > 0 and vidaMahoraga > 0:
     movimentoFeiticeiro = input()
@@ -45,6 +44,7 @@ while vidaFeiticeiro > 0 and vidaMahoraga > 0:
     if movimentoFeiticeiro == "black flash":
         print("As faíscas negras ignoram qualquer tipo de defesa! Toma essa Mahoraga!")
         dano = (ataqueFeiticeiro + 25) * 2
+        fator = 0
     elif movimentoFeiticeiro == "reversão de feitiço":
         if reversaoFeitico:
             vidaFeiticeiro += 25
@@ -64,16 +64,26 @@ while vidaFeiticeiro > 0 and vidaMahoraga > 0:
             elif adaptacoes_vezes[indice] == 3:
                 print(f"A roda do Mahoraga girou pela terceira vez! {movimentoFeiticeiro} não vai funcionar mais")
                 fator = 4
+                ataques_ecerrados.append(movimentoFeiticeiro)
             else:
                 print("Esse ataque é inútil! Melhor tentar outra coisa.")
-                continue
+                fator = 5
         else:
             print(f"A roda do Mahoraga girou uma vez! {movimentoFeiticeiro} só vai funcionar mais duas vezes")
             adaptacoes_nome.append(movimentoFeiticeiro)
             adaptacoes_vezes.append(1)
         dano = max(((ataqueFeiticeiro - defesaMahoraga) + 25) // fator, 0)
+        
+        comp1, comp2 = sorted(listaGolpes), sorted(ataques_ecerrados)
     
-    vidaMahoraga -= dano
+        if(comp1 == comp2):
+            print("saí")
+            break
+        
+        
+    
+    if fator < 5:
+        vidaMahoraga -= dano
     if vidaMahoraga <= 0:
         print(f"{nomeFeiticeiro} conseguiu!")
         if nomeFeiticeiro == "Megumi Fushiguro":
@@ -102,6 +112,14 @@ while vidaFeiticeiro > 0 and vidaMahoraga > 0:
                 print(f"A roda do Mahoraga girou pela segunda vez! {movimentoFeiticeiro} só vai funcionar mais uma vez")
             elif adaptacoes_vezes[indice] == 3:
                 print(f"A roda do Mahoraga girou pela terceira vez! {movimentoFeiticeiro} não vai funcionar mais")
+                ataques_ecerrados.append(movimentoFeiticeiro)
+        
+        comp1, comp2 = sorted(listaGolpes), sorted(ataques_ecerrados)
+    
+        if(comp1 == comp2):
+            print("saí")
+            break
+        
 
     if vidaFeiticeiro <= 0:
         if nomeFeiticeiro == "Satoru Gojo":
@@ -109,3 +127,5 @@ while vidaFeiticeiro > 0 and vidaMahoraga > 0:
         else:
             print(f"Parece que nem mesmo {nomeFeiticeiro} foi páreo contra o Mahoraga...")
         break
+    
+    

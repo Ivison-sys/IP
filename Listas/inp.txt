@@ -5,16 +5,16 @@ Nobara Kugisaki
 True
 False
 200
-30
+30 
 20
-ressonancia, presilha, boneco amaldiçoado, soco, chute
+ressonancia, presilha
+ressonancia
+adaptação
 ressonancia
 ataque
-ressonancia
-adatapção
-ressonancia
-ataque
-black flash
+presilha
+adaptação
+presilha
 ataque
 chute
 regeneração
