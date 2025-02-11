@@ -1,2 +1,13 @@
-Foi decidido que será 40.0 para Piltover e 360.0 para Zaun!
-Zaun receberá uma bolada!!!
+Personagem Vi adicionado
+Personagem Luis adicionado
+Personagem Roberto adicionado
+Personagem Luis removido
+Personagem Caitlyn adicionado
+Personagem Mylo adicionado
+Lista final de personagens:
+Vi
+Roberto
+Caitlyn
+Mylo
+Infelizmente você perdeu...
+Eita... Vamos precisar assistir novamente.
