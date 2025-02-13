@@ -1,13 +1,2 @@
-Personagem Vi adicionado
-Personagem Luis adicionado
-Personagem Roberto adicionado
-Personagem Luis removido
-Personagem Caitlyn adicionado
-Personagem Mylo adicionado
-Lista final de personagens:
-Vi
-Roberto
-Caitlyn
-Mylo
-Infelizmente você perdeu...
-Eita... Vamos precisar assistir novamente.
+Piltover em paz... por enquanto.
+Piltover em paz... por enquanto.
