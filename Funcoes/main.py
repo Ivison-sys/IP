@@ -1,54 +1,73 @@
-def descriptografar(palavra, num):
-  texto = ""
-  for i in range(len(palavra)):
-    indice = alfabeto.index(palavra[i])
+inimigo = input().split(' - ')
+nome = inimigo[0]
+vida = int(inimigo[1])
+distancia = int(inimigo[2])
+velocidade = int(inimigo[3])
+defesa = inimigo[4] == "1"
+ativo = False
+lancar = True
 
-    if indice - num < 0:
-      letra = 26 + (indice - num)
-    else:
-      letra = indice - num
-    
-    texto += alfabeto[letra]
-  return texto
+print(f"Andando pelas ruas de Zaun, jinx dá de cara com um {nome} e agora vão lutar.")
 
-def calcular_dano(precisao, poder_explosao, resistencia, palavra):
-  if palavra == "ALTO":
-    fator = 2
-  elif palavra == "MEDIO":
-    fator = 1.5
+def zap(vida):
+  global ativo
+  global defesa
+  ativo = True
+  if not defesa:
+    vida -= 5
+    print("Você foi zapeado hahaha.")
   else:
-    fator = 1
-  
-  return round(precisao * (poder_explosao / resistencia) * fator)
+    print("Ele está com defesa e está muito perto!")
+  return vida
 
-def ordenarAtaques(lista_ataques):
-  return sorted(ataques, key= lambda x: x[1], reverse=True)
-n_ataques = int(input())
-alfabeto = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+def powPow(vida):
+  print("Jinx vai encher esse cara de buracos agora.")
+  return vida - 15
 
-if n_ataques == 0:
-  print("Piltover em paz... por enquanto.")
+def fishBones(vida):
+  global defesa
+  if defesa:
+    print("A defesa dele foi destruída com o poder da Fishbones!")
+    defesa = False
+    return vida
+  print("Vamos derretê-lo com a Fishbones!") 
+  return vida - 30
+ 
+def lancaMissil(vida):
+  global lancar
+  if lancar:
+    lancar = False
+    print("Ele vai ser transformado em cinzas pelo SUPER MÍSSIL!")
+    return vida - 100
+ 
 
-else:
-  ataques = []
-  for i in range(n_ataques):
-    ataque = input().split(', ')
-    palavra = descriptografar(ataque[4], int(ataque[5]))
-    dano = calcular_dano(int(ataque[1]), int(ataque[3]),int(ataque[2]), palavra)
-    ataques.append([ataque[0], dano])
-    
-    ataques = ordenarAtaques(ataques)
+def escolhaArma(vida, distancia, defe):
+  if defe and distancia >= 30:
+    vida = fishBones(vida)
+  elif not defe:
+    if distancia >= 50 and lancar:
+      vida = lancaMissil(vida)  
+    elif distancia >= 30:
 
-    print(f"Decifrando: {palavra}")
-    print(f"{ataque[0]}: {dano} de dano calculado.")
-
-    if dano >= 100:
-      print(f"{ataque[0]} será destruído!")
+      vida = fishBones(vida)
+    elif distancia >= 15:
+      vida = powPow(vida)
     else:
-      print(f"{ataque[0]} resistirá ao ataque.")
-    print()
+      vida = zap(vida)
+  else:
+    vida = zap(vida)
     
-  print("Prioridade de ataques:")
+  return vida
 
-  for at in ataques:
-    print(f"{at[0]} - {at[1]} de dano")
+while distancia > 0 and vida > 0:
+  vida = escolhaArma(vida, distancia, defesa)
+  if velocidade <= 1:
+    ativo = False
+  if ativo:
+    velocidade -= 1
+  distancia -= velocidade
+
+if distancia > 0:
+  print("Ninguem é capaz de derrotar a Jinx!!!")
+else:
+  print("Ah não, A Jinx foi PEGA!")
