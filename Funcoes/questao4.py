@@ -21,8 +21,14 @@ def calcular_dano(precisao, poder_explosao, resistencia, palavra):
   
   return round(precisao * (poder_explosao / resistencia) * fator)
 
-def ordenarAtaques(lista_ataques):
-  return sorted(ataques, key= lambda x: x[1], reverse=True)
+def ordenarAtaques(lista_ataques, lista_danos):
+  danos_ordenados = sorted(lista_danos, reverse=True)
+  lista = []
+  for dano in danos_ordenados:
+    indice = lista_danos.index(dano)
+    lista.append(lista_ataques[indice])
+  return lista
+
 n_ataques = int(input())
 alfabeto = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 
@@ -31,13 +37,15 @@ if n_ataques == 0:
 
 else:
   ataques = []
+  danos = []
   for i in range(n_ataques):
     ataque = input().split(', ')
     palavra = descriptografar(ataque[4], int(ataque[5]))
     dano = calcular_dano(int(ataque[1]), int(ataque[3]),int(ataque[2]), palavra)
+    danos.append(dano)
     ataques.append([ataque[0], dano])
     
-    ataques = ordenarAtaques(ataques)
+    ataques = ordenarAtaques(ataques, danos)
 
     print(f"Decifrando: {palavra}")
     print(f"{ataque[0]}: {dano} de dano calculado.")
