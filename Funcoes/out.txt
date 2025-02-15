@@ -1,16 +1,7 @@
-Andando pelas ruas de Zaun, jinx dá de cara com um Rosa negra e agora vão lutar.
-Ele está com defesa e está muito perto!
-Ele está com defesa e está muito perto!
-Ele está com defesa e está muito perto!
-Ele está com defesa e está muito perto!
-Ele está com defesa e está muito perto!
-Ele está com defesa e está muito perto!
-Ele está com defesa e está muito perto!
-Ele está com defesa e está muito perto!
-Ele está com defesa e está muito perto!
-Ele está com defesa e está muito perto!
-Ele está com defesa e está muito perto!
-Ele está com defesa e está muito perto!
-Ele está com defesa e está muito perto!
-Ele está com defesa e está muito perto!
-Ah não, A Jinx foi PEGA!
+q1: {0 -> q2, 1 -> q1}
+q2: {0 -> q1, 1 -> q2}
+Que tristeza, todo esse arrudeio pra nada…
+{q1 -> q2 -> q1}
+Que tristeza, todo esse arrudeio pra nada…
+{q2 -> q1 -> q2 -> q1}
+Nossas expectativas já eram baixas, mas não sabia que seria tão catastrófico assim :/
