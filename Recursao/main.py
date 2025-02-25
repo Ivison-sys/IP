@@ -1,7 +1,7 @@
 def tratar_expressao(text):
   equacao = []
   text += "-"
-  
+
   inicio = 0
   for i in range(len(text)):
     if (text[i] == "+" or text[i] == "-") and i > 0:
@@ -10,18 +10,26 @@ def tratar_expressao(text):
   return equacao
 
 def derivar(expressao, grau):
+  test = [0] * len(expressao)
   if grau == 0:
     return expressao
+  if expressao == test:
+    return -1
   
   
 
   for i in range(len(expressao)):
+    if expressao[i] == 0:
+      continue
     if expressao[i] != 0:
       if "x" not in expressao[i]:
         expressao[i] = 0
       elif expressao[i][-1] == "x":
         termos = expressao[i].split("x")
-        expressao[i] = termos[0]
+        if termos[0] in ["", "+", "-"]:
+          expressao[i] = 1
+        else:
+          expressao[i] = termos[0]
       else:
         termos = expressao[i].split("^")
 
@@ -48,15 +56,18 @@ equacao = derivar(equacao, grau)
 
 print(f"A derivada de ordem {grau} da função {inp} é:")
 
-for i in range(len(equacao)):
-  if equacao != 0:
-    termo = equacao[i]
-    if i > 0 and termo[0] not in ["-", "+"]:
-      termo = "+" + termo
-    # partes = termo.split("^")
-    # if partes[1] == "1":
-    #   print(partes[0], end='')
-    if termo != 0:
-      print(termo, end='')  
+exemplo = []
+if equacao == -1:
+  print("0")
+else:
+  for i in range(len(equacao)):
+    if equacao != 0:
+      termo = str(equacao[i])
+      if i > 0 and termo[0] not in ["-", "+"]:
+        termo = "+" + termo
+      if termo == "+0" or termo == "-0":
+        termo = ""
+      if termo != 0:
+        print(termo, end='')  
 
 
