@@ -1,73 +1,35 @@
-def tratar_expressao(text):
-  equacao = []
-  text += "-"
+def gerar_combinacoes(lista, k):
+    resultado = []
 
-  inicio = 0
-  for i in range(len(text)):
-    if (text[i] == "+" or text[i] == "-") and i > 0:
-      equacao.append(text[inicio:i])
-      inicio = i
-  return equacao
 
-def derivar(expressao, grau):
-  test = [0] * len(expressao)
-  if grau == 0:
-    return expressao
-  if expressao == test:
-    return -1
+   
+    def backtrack(inicio, combinacao, maior=[]):
+        
+        if sum(combinacao[:]) == k and len(combinacao[:]) >= 4:
+            resultado.append(combinacao[:])  # Anota a combinação atual
+            if len(combinacao[:]) > len(maior):
+               maior = combinacao[:]
+        
+        for i in range(inicio, len(lista)):  
+            combinacao.append(lista[i])  # Pega um brinquedo
+            backtrack(i + 1, combinacao)  # Chama a brincadeira de novo
+            combinacao.pop()  # Devolve o brinquedo para tentar outras combinações
+
+    backtrack(0, [])  # Começa com a sacola vazia
+    return resultado
+
+q_portas = int(input())
+
+for i in range(q_portas):
+  seq = input().split(", ")
+  seq_tratado = []
   
+  for num in seq:
+    num = int(num)
+    if num != 0:
+      seq_tratado.append(num)
+    
+  k = int(input())
+  print(gerar_combinacoes(seq_tratado, k))
   
-
-  for i in range(len(expressao)):
-    if expressao[i] == 0:
-      continue
-    if expressao[i] != 0:
-      if "x" not in expressao[i]:
-        expressao[i] = 0
-      elif expressao[i][-1] == "x":
-        termos = expressao[i].split("x")
-        if termos[0] in ["", "+", "-"]:
-          expressao[i] = 1
-        else:
-          expressao[i] = termos[0]
-      else:
-        termos = expressao[i].split("^")
-
-        if termos[0] == "x":
-          base = 1
-        else:
-          base = int(termos[0].replace("x", ""))
-
-        expoente = int(termos[1])
-        if expoente > 2:
-          expressao[i] = f"{base*expoente}x^{expoente-1}"
-        else: 
-          expressao[i] = f"{base*expoente}x"
-
-  return derivar(expressao, grau-1) 
-
-
-
-inp = input()
-grau = int(input())
-
-equacao = tratar_expressao(inp)
-equacao = derivar(equacao, grau)
-
-print(f"A derivada de ordem {grau} da função {inp} é:")
-
-exemplo = []
-if equacao == -1:
-  print("0")
-else:
-  for i in range(len(equacao)):
-    if equacao != 0:
-      termo = str(equacao[i])
-      if i > 0 and termo[0] not in ["-", "+"]:
-        termo = "+" + termo
-      if termo == "+0" or termo == "-0":
-        termo = ""
-      if termo != 0:
-        print(termo, end='')  
-
 
