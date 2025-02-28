@@ -1,35 +1,15 @@
-def gerar_combinacoes(lista, k):
-    resultado = []
+grad = [["m","a","i"],["x","x","u"],["z","u","y"]]
 
+def gerar_prox_letras(x , y, n):
+  coordenadas = []
+  d_x = [1, -1, 0, 0, 1, 1, -1, -1]
+  d_y = [0, 0, 1, -1, 1, -1, 1, -1]
 
-   
-    def backtrack(inicio, combinacao, maior=[]):
-        
-        if sum(combinacao[:]) == k and len(combinacao[:]) >= 4:
-            resultado.append(combinacao[:])  # Anota a combinação atual
-            if len(combinacao[:]) > len(maior):
-               maior = combinacao[:]
-        
-        for i in range(inicio, len(lista)):  
-            combinacao.append(lista[i])  # Pega um brinquedo
-            backtrack(i + 1, combinacao)  # Chama a brincadeira de novo
-            combinacao.pop()  # Devolve o brinquedo para tentar outras combinações
+  for i in range(8):
+    pos_x, pos_y = x + d_x[i], y + d_y[i]
+    if pos_x < n and pos_x >= 0 and pos_y < n and pos_y >= 0:
+      coordenadas.append([pos_x, pos_y])
+  return coordenadas
 
-    backtrack(0, [])  # Começa com a sacola vazia
-    return resultado
-
-q_portas = int(input())
-
-for i in range(q_portas):
-  seq = input().split(", ")
-  seq_tratado = []
-  
-  for num in seq:
-    num = int(num)
-    if num != 0:
-      seq_tratado.append(num)
-    
-  k = int(input())
-  print(gerar_combinacoes(seq_tratado, k))
-  
-
+def gerar_combinacoes(lista):
+  pass
