@@ -1,1 +1,9 @@
-0 0 3
+[[0, 1, 2]]
+[[0, 1, 2]]
+6
+6
+6
+Puffle Flare capturado no momento: 6 unidades de tempo
+Missão bem sucedida!! Todos os puffles se salvaram.
+Caminho comum entre todos os puffles:
+[2, 2, 2] -> [1, 1, 1] -> [0, 0, 0] (6 unidades de tempo)
