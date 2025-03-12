@@ -32,12 +32,12 @@ def gerar_caminhos(grafo, inicio, destino, flare1, flare2, anterior=-1,caminho_a
   global caminhos
   caminho_atual.append(inicio)
   
-  if inicio == flare1:
-    if anterior == flare2:
-      caminhos_flares_incompletos.append(caminho_atual[:])
-  elif inicio == flare2:
-    if anterior == flare1:
-      caminhos_flares_incompletos.append(caminho_atual[:])
+  # if inicio == flare1:
+  #   if anterior == flare2:
+  #     caminhos_flares_incompletos.append(caminho_atual[:])
+  # elif inicio == flare2:
+  #   if anterior == flare1:
+  #     caminhos_flares_incompletos.append(caminho_atual[:])
   if inicio == destino:
     caminhos.append(caminho_atual[:])
     if flare1 in caminho_atual:
@@ -121,7 +121,7 @@ for i in range(len(caminhos)):
 
 tempo_menor_flare = float("inf")
 menor_flare = []
-menor_tempo_ate_flare = 0
+menor_tempo_ate_flare = float("inf")
 for i in range(len(caminhos_flares)):
   tempo, tempo_ate_flare = calcular_tempo(caminhos_flares[i], eglus, True, flare1, flare2)
   if tempo < tempo_menor_flare:
@@ -129,52 +129,50 @@ for i in range(len(caminhos_flares)):
     menor_tempo_ate_flare = tempo_ate_flare
     menor_flare = caminhos_flares[i]
 
-print(caminhos_flares_incompletos)
-if caminhos:
-  if caminhos_flares:
-    isDerrotados = False
-    primeiro = True
+if tempo_maximo >= menor_tempo_ate_flare:
+  print(f"Puffle Flare capturado no momento: {menor_tempo_ate_flare} unidades de tempo")
+else:
+  print("Não é possível capturar o Puffle Flare...")
 
-    if tempo_maximo >= tempo_menor_caminho and tempo_maximo >= menor_tempo_ate_flare and tempo_maximo >= tempo_menor_flare:
-      print(f"Puffle Flare capturado no momento: {menor_tempo_ate_flare} unidades de tempo")
-      print("Missão bem sucedida!! Todos os puffles se salvaram.")
-    elif tempo_maximo < tempo_menor_caminho or tempo_maximo < menor_tempo_ate_flare:
-      isDerrotados = True
-      print("Fomos derrotados... não foi possível escapar da erupção do vulcão!")
-    elif tempo_maximo >= menor_tempo_ate_flare and tempo_maximo < tempo_menor_flare:
-      print(f"Puffle Flare capturado no momento: {menor_tempo_ate_flare} unidades de tempo")
-      primeiro = False
-      print("O primeiro puffle não conseguiu chegar lá...")
-      
-    
-    if not isDerrotados:
-      if((not primeiro) or menor_caminho == menor_flare):
-        print("Caminho comum entre todos os puffles:")
-        for i in menor_caminho:
-          if eglus[i] == eglu_seguro:
-            print(f"{eglus[i]}", end=" ")
-          else:
-            print(f"{eglus[i]} -> ", end="")
-        print(f"({tempo_menor_caminho} unidades de tempo)")
-      else:
-        print("Caminho do primeiro puffle:") 
-        for i in menor_flare:
-          if eglus[i] == eglu_seguro:
-            print(f"{eglus[i]}", end=" ")
-          else:
-            print(f"{eglus[i]} -> ", end="")
-        print(f"({tempo_menor_flare} unidades de tempo)")
-        print("Caminho dos outros puffles:")
-        for i in menor_caminho:
-          if eglus[i] == eglu_seguro:
-            print(f"{eglus[i]}", end=" ")
-          else:
-            print(f"{eglus[i]} -> ", end="")
-        print(f"({tempo_menor_caminho} unidades de tempo)")
-          
-  else:
-    if caminhos:
-      pass
+if caminhos:
+  isDerrotados = False
+  primeiro = True
+  
+  # Status da missão
+  if tempo_maximo >= tempo_menor_caminho and tempo_maximo >= tempo_menor_flare:
+    print("Missão bem sucedida!! Todos os puffles se salvaram.")
+  elif tempo_maximo < tempo_menor_caminho or tempo_maximo < menor_tempo_ate_flare:
+    isDerrotados = True
     print("Fomos derrotados... não foi possível escapar da erupção do vulcão!")
+  elif tempo_maximo > tempo_menor_flare:
+    primeiro = False
+    print("O primeiro puffle não conseguiu chegar lá...")
+    
+  
+  if not isDerrotados:
+    if(menor_caminho == menor_flare):
+      print("Caminho comum entre todos os puffles:")
+      for i in menor_caminho:
+        if eglus[i] == eglu_seguro:
+          print(f"{eglus[i]}", end=" ")
+        else:
+          print(f"{eglus[i]} -> ", end="")
+      print(f"({tempo_menor_caminho} unidades de tempo)")
+    else:
+      print("Caminho do primeiro puffle:") 
+      for i in menor_flare:
+        if eglus[i] == eglu_seguro:
+          print(f"{eglus[i]}", end=" ")
+        else:
+          print(f"{eglus[i]} -> ", end="")
+      print(f"({tempo_menor_flare} unidades de tempo)")
+      print("Caminho dos outros puffles:")
+      for i in menor_caminho:
+        if eglus[i] == eglu_seguro:
+          print(f"{eglus[i]}", end=" ")
+        else:
+          print(f"{eglus[i]} -> ", end="")
+      print(f"({tempo_menor_caminho} unidades de tempo)")
+          
 else:
   print("Não há como escapar...")  

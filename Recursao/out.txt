@@ -1,2 +1,49 @@
-[[0, 1, 3]]
-Fomos derrotados... não foi possível escapar da erupção do vulcão!
+int enableEsquerdo = 9;
+int motorEsquerdoFrente = 6;
+int motorEsquerdoTras = 7;
+int enableDireito = 3;
+int motorDireitoFrente = 5;
+int motorDireitoTras = 4;
+int x = 20;
+void frente(int temp){
+  analogWrite(motorEsquerdoTras, 0);
+  analogWrite(motorDireitoTras, 0);
+
+  for(int i = 0; i <= 255; i+=x){
+    analogWrite(motorEsquerdoFrente, i);
+    analogWrite(motorDireitoFrente, i);
+  }
+  for(int i = x; i >= 0; i-=x){
+    analogWrite(motorEsquerdoFrente, i);
+    analogWrite(motorDireitoFrente, i);
+  }
+  analogWrite(motorEsquerdoFrente, 0);
+  analogWrite(motorDireitoFrente, 0);
+  delay(temp * 500);
+}
+
+
+void tras(int temp){
+
+  for(int i = 0; i <= 255; i+=x){
+    analogWrite(motorEsquerdoTras, i);
+    analogWrite(motorDireitoTras, i);
+  }
+  for(int i = x; i >= 0; i-=x){
+    analogWrite(motorEsquerdoTras, i);
+    analogWrite(motorDireitoTras, i);
+  }
+  analogWrite(motorEsquerdoTras, 0);
+  analogWrite(motorDireitoTras, 0);
+  delay(temp * 500);
+}
+
+void setup() {
+  digitalWrite(enableEsquerdo, OUTPUT);
+  digitalWrite(enableDireito, OUTPUT);
+}
+
+void loop() {
+  frente(2);
+  tras(2);
+}
