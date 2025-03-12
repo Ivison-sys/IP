@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="6zoyET3EdpDq-mprKjlG" name="Page-1">
-        <mxGraphModel dx="1955" dy="1067" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+        <mxGraphModel dx="1827" dy="1090" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -46,11 +46,20 @@
                 <mxCell id="64" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="-315" y="57" width="80" height="80" as="geometry"/>
                 </mxCell>
+                <mxCell id="89" style="edgeStyle=none;html=1;" edge="1" parent="1" source="65" target="68">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="65" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="-116" y="229" width="80" height="80" as="geometry"/>
                 </mxCell>
+                <mxCell id="87" style="edgeStyle=none;html=1;" edge="1" parent="1" source="66" target="67">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="66" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="-15" y="-18" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" style="edgeStyle=none;html=1;" edge="1" parent="1" source="67" target="62">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="67" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="41" y="79" width="80" height="80" as="geometry"/>
@@ -64,36 +73,20 @@
                 <mxCell id="69" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="-166" y="-34" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="76" style="edgeStyle=none;html=1;" parent="1" source="70" target="65" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="77" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="70" target="67" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="83" value="5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="77" vertex="1" connectable="0">
-                    <mxGeometry x="0.1605" relative="1" as="geometry">
-                        <mxPoint x="1" as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="78" style="edgeStyle=none;html=1;" parent="1" source="70" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="49" y="263" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="70" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                <mxCell id="70" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
                     <mxGeometry x="-184" y="108" width="80" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="75" style="edgeStyle=none;html=1;entryX=0.075;entryY=0.288;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="69" target="66" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="84" value="Desenho do problema&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=34;" vertex="1" parent="1">
+                <mxCell id="84" value="Desenho do problema&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=34;" parent="1" vertex="1">
                     <mxGeometry x="-246" y="-231" width="353" height="94" as="geometry"/>
                 </mxCell>
-                <mxCell id="85" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(153, 153, 153));&quot;&gt;Passos&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=38;fontStyle=1" vertex="1" parent="1">
+                <mxCell id="85" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(153, 153, 153));&quot;&gt;Passos&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=38;fontStyle=1" parent="1" vertex="1">
                     <mxGeometry x="502" y="-336" width="143" height="58" as="geometry"/>
                 </mxCell>
-                <mxCell id="86" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 255, 0));&quot;&gt;- Função que separa os nos.&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 204, 0));&quot;&gt;- Função que relacioana os nos a indices.&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 204, 0));&quot;&gt;- Gerar todos os caminhos.&lt;br&gt;- Gerar caminhos que passam pelo flare&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Escolher os mais rápido dos caminhos&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=30;" vertex="1" parent="1">
-                    <mxGeometry x="290" y="-294" width="573" height="228" as="geometry"/>
+                <mxCell id="86" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 255, 0));&quot;&gt;- Função que separa os nos.&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 204, 0));&quot;&gt;- Função que relacioana os nos a indices.&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 204, 0));&quot;&gt;- Gerar todos os caminhos.&lt;br&gt;- Gerar caminhos que passam pelo flare&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Escolher os mais rápido dos caminhos&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=30;" parent="1" vertex="1">
+                    <mxGeometry x="307" y="-301" width="573" height="228" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
