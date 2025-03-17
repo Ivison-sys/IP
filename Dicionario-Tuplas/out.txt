@@ -1,12 +1,14 @@
-mon (nordeste, nosso, meu, pernambuco)
+nasz (povo,nosso,população,comunidade)
 ------------------
-mon nord-Est (meu, nosso, nordeste, pernambuco)
+nasz lud (povo,nosso,população,comunidade)
 ------------------
-mon nord-Est (nosso, nordeste, pernambuco, país)
+nasz lud (lutou,povo,nosso,população)
 ------------------
-mon nord-Est (nordeste, pernambuco, país)
+nasz lud walczył (lutou,povo,por,nosso)
 ------------------
-mon nord-Est pays (nordeste, pernambuco, país)
+nasz lud walczył o (lutou,povo,por,nosso)
 ------------------
-meu nordeste país
-mon nord-Est pays
+nasz lud walczył o wolność (população,independência,lutou,povo)
+------------------
+nosso povo lutou por liberdade
+nasz lud walczył o wolność
