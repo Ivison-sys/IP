@@ -9,7 +9,7 @@ def calcular_pontuacao(lista_palavras, palavra):
   return pontuacao_total
 
 def calcular_sugestoes(lista_palavras, dicionario):
-  pontuacoes = []
+  pontuacoes = [] 
   sugestoes = []
   for key in dicionario:
     pontuacao = calcular_pontuacao(lista_palavras, key)
@@ -73,4 +73,4 @@ while inp != "*FIM":
   inp = input()
 
 print(" ".join(chaves))
-print(" ". join(texto))
+print(" ". join(texto)) 

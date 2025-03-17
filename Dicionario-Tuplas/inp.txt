@@ -1,15 +1,11 @@
-*ADD nosso:nasz
-*ADD povo:lud
-*ADD população:ludność
-*ADD comunidade:społeczność
-*ESC nosso
+*ADD meu:mon
+*ADD país:pays
+*ADD pernambuco:pernambuco
+*ADD nosso:notre
+*ADD nordeste:nord-Est
+*ESC meu
 *SEL 1
-*ADD lutou:walczył
-*ADD por:o
-*ADD independência:niezależność
-*SEL 1
-*ADD liberdade:wolność
-*ADD coragem:śmiałość
+*DEL meu
+*DEL nosso
 *SEL 3
-*ESC liberdade
 *FIM
