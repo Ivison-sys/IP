@@ -1,0 +1,16 @@
+nasz (povo,população,nosso,comunidade)
+------------------
+nasz lud (povo,nosso,população,comunidade)
+------------------
+nasz lud (povo,lutou,nosso,população)
+------------------
+nasz lud (por,povo,lutou,nosso)
+------------------
+nasz lud o (por,povo,lutou,população)
+------------------
+nasz lud o walczył (povo,lutou,por,nosso)
+------------------
+nasz lud o walczył wolność (povo,lutou,por,nosso)
+------------------
+nosso povo por lutou liberdade
+nasz lud o walczył wolność

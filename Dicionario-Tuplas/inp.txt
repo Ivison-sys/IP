@@ -1,0 +1,15 @@
+*ADD nosso:nasz
+*ADD povo:lud
+*ADD população:ludność
+*ADD comunidade:społeczność
+*ESC nosso
+*SEL 1
+*ADD lutou:walczył
+*ADD por:o
+*ADD independência:niezależność
+*SEL 1
+*ADD liberdade:wolność
+*ADD coragem:śmiałość
+*SEL 3
+*ESC liberdade
+*FIM
