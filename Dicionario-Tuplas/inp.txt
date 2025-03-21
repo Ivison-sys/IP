@@ -1,15 +1,12 @@
-*ADD nosso:nasz
-*ADD povo:lud
-*ADD população:ludność
-*ADD comunidade:społeczność
-*ESC nosso
-*SEL 1
-*ADD lutou:walczył
-*ADD por:o
-*ADD independência:niezależność
-*SEL 1
-*ADD liberdade:wolność
-*ADD coragem:śmiałość
-*SEL 3
-*ESC liberdade
-*FIM
+Forte Madame Bruyne
+DESAPROVA
+40000000
+Defesa
+Biblioteca de Recife
+APROVA
+500000
+Lazer
+Ponte Maurício de Nassau
+TANTO FAZ
+3000000
+Mobilidade

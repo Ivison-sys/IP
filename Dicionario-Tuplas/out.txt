@@ -1,14 +1,6 @@
-nasz (povo,nosso,população,comunidade)
-------------------
-nasz lud (povo,nosso,população,comunidade)
-------------------
-nasz lud (lutou,povo,nosso,população)
-------------------
-nasz lud walczył (lutou,povo,por,nosso)
-------------------
-nasz lud walczył o (lutou,povo,por,nosso)
-------------------
-nasz lud walczył o wolność (população,independência,lutou,povo)
-------------------
-nosso povo lutou por liberdade
-nasz lud walczył o wolność
+
+O primeiro estabelecimento construído deve ser Biblioteca de Recife, com um orçamento de 500000 e com a funcionalidade de Lazer.
+O segundo estabelecimento construído deve ser Forte Madame Bruyne, com um orçamento de 40000000 e com a funcionalidade de Defesa.
+O terceiro estabelecimento construído deve ser Ponte Maurício de Nassau, com um orçamento de 3000000 e com a funcionalidade de Mobilidade.
+Vamooo, agora posso curtir meu final de semana descansando na bela cidade do Recife.
+Oba, agora a cidade estará mais segura.
